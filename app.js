@@ -8,6 +8,9 @@ const cors = require("cors");
 // Init Express App
 const app = express();
 
+// Set dynamic port
+const port = process.env.PORT || 8000;
+
 // Middleware HTTP Requests
 app.use(cors());
 
@@ -81,4 +84,4 @@ app.get("/api/jokes/random", (req, res) => {
 })
 
 // Listen To Port
-app.listen(3000, () => console.log("Server running on port 3000..."));
+app.listen(port, () => console.log("Server running on port 3000..."));
